@@ -14,7 +14,7 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             Positioned.fill(
               child: SvgPicture.asset(
-                'images/svg/Gro.svg',
+                'images/Gro.svg',
                 alignment: Alignment.center,
                 width: MediaQuery.sizeOf(context).width,
                 height: MediaQuery.sizeOf(context).height,
