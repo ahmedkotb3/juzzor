@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:juzzor/screens/lang.dart';
-import 'package:juzzor/screens/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
