@@ -7,7 +7,16 @@ class Lang extends StatelessWidget {
     return Scaffold(
       body: Row(
         children: [
-          Column(children: [Image.asset("/images/langLeft.png")]),
+          Column(
+            children: [
+              Image.asset(
+                "/images/langLeft.png",
+                height: MediaQuery.sizeOf(context).height,
+                width: 500,
+                fit: BoxFit.cover,
+              ),
+            ],
+          ),
           Column(
             children: [
               Row(
@@ -19,7 +28,7 @@ class Lang extends StatelessWidget {
                         Container(
                           alignment: Alignment.center,
                           child: Image.asset(
-                            'assets/s2.png',
+                            '/images/EnBg.png',
                             height: 200,
                             width: double.infinity,
                             fit: BoxFit.cover,
@@ -50,7 +59,7 @@ class Lang extends StatelessWidget {
                         Container(
                           alignment: Alignment.center,
                           child: Image.asset(
-                            'assets/s2.png',
+                            '/images/ArBg.png',
                             height: 200,
                             width: double.infinity,
                             fit: BoxFit.cover,
