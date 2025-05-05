@@ -54,10 +54,7 @@ class _LangState extends State<Lang> {
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: AdaptiveFontSize.getFontSize(
-                                context,
-                                16,
-                              ),
+                              fontSize: Adaptive.getFontSize(context, 16),
                             ),
                           ),
                         ),
@@ -88,10 +85,7 @@ class _LangState extends State<Lang> {
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: AdaptiveFontSize.getFontSize(
-                                context,
-                                16,
-                              ),
+                              fontSize: Adaptive.getFontSize(context, 16),
                             ),
                           ),
                         ),
