@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:juzzor/screens/lang.dart';
-import 'package:juzzor/screens/splash.dart';
-import 'package:juzzor/screens/third.dart';
+// import 'package:juzzor/screens/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Sultan',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const ThirdScreen(),
+      home: const Lang(),
     );
   }
 }
