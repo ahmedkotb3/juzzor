@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Sultan',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const ThirdScreen(),
+      home: const Lang(),
     );
   }
 }
