@@ -1,0 +1,9 @@
+{
+    "@@locale": "en",
+    "appTitle": "My Application",
+    "welcomeMessage": "Welcome to My Application!",
+    "errorOccurred": "An error occurred. Please try again later.",
+    "loading": "Loading...",
+    "videos": "Videos",
+    "playandlearn": "Play and Learn"
+}

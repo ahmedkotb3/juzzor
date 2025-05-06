@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:juzzor/screens/lang.dart';
 import 'package:juzzor/screens/splash.dart';
 import 'package:juzzor/screens/third.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,6 +24,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en'), // English
+        Locale('ar'), // Arabic
+      ],
       title: 'Juzzor',
       theme: ThemeData(
         fontFamily: 'Sultan',
