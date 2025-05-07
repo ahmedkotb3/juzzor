@@ -3,8 +3,121 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:juzzor/common.dart';
 import 'package:juzzor/generated/l10n.dart';
 
-class ThirdScreen extends StatelessWidget {
+class ThirdScreen extends StatefulWidget {
   const ThirdScreen({super.key});
+
+  @override
+  State<ThirdScreen> createState() => _ThirdScreenState();
+}
+
+class _ThirdScreenState extends State<ThirdScreen> {
+  Future<void> _handleModal() async {
+    return showDialog<void>(
+      useSafeArea: true,
+      context: context,
+      barrierDismissible: true, // user must tap button!
+      builder: (BuildContext context) {
+        return SizedBox(
+          width: double.infinity,
+          child: Stack(
+            children: <Widget>[
+              Image.asset(
+                '/images/modalBg.png',
+                height: 800,
+                width: double.infinity,
+                fit: BoxFit.contain,
+              ),
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {},
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            '/images/YellowBtn.png',
+                            height: 300,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              alignment: Alignment.center,
+                              child: Image.asset(
+                                '/images/langIcon.png',
+                                height: 70,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                'اللغة',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: Adaptive.getFontSize(context, 16),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () => (),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            '/images/YellowBtn.png',
+                            height: 300,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'حسابي',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: Adaptive.getFontSize(context, 16),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Positioned(
+                bottom: 150,
+                left: 250,
+                child: SizedBox(
+                  height: 150,
+                  width: 150,
+                  child: Center(
+                    child: Image.asset(
+                      "images/BottomLogo.png",
+                      fit: BoxFit.contain,
+                      alignment: Alignment.center,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,25 +142,31 @@ class ThirdScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      SizedBox(
-                        height: 150,
-                        width: 150,
-                        child: Center(
-                          child: Image.asset(
-                            "images/left.png",
-                            fit: BoxFit.contain,
-                            alignment: Alignment.center,
+                      GestureDetector(
+                        onTap: () => Navigator.of(context).pop(false),
+                        child: SizedBox(
+                          height: 150,
+                          width: 150,
+                          child: Center(
+                            child: Image.asset(
+                              "images/left.png",
+                              fit: BoxFit.contain,
+                              alignment: Alignment.center,
+                            ),
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 150,
-                        width: 150,
-                        child: Center(
-                          child: Image.asset(
-                            "images/rightBtn.png",
-                            fit: BoxFit.contain,
-                            alignment: Alignment.center,
+                      GestureDetector(
+                        onTap: () => _handleModal(),
+                        child: SizedBox(
+                          height: 150,
+                          width: 150,
+                          child: Center(
+                            child: Image.asset(
+                              "images/rightBtn.png",
+                              fit: BoxFit.contain,
+                              alignment: Alignment.center,
+                            ),
                           ),
                         ),
                       ),
@@ -60,34 +179,30 @@ class ThirdScreen extends StatelessWidget {
                       Stack(
                         alignment: Alignment.center,
                         children: [
-                          Positioned(
-                            top: -100,
-                            child: Container(
-                              alignment: Alignment.center,
-                              child: SvgPicture.asset(
-                                '/images/svg/GirlwPencil.svg',
-                                height: 300,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-
                           Container(
                             alignment: Alignment.center,
-                            child: Stack(
+                            child: SvgPicture.asset(
+                              '/images/svg/GirlwPencil.svg',
+                              height: 500,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Positioned(
+                            top: 200,
+                            child: Container(
                               alignment: Alignment.center,
-                              children: [
-                                Container(
-                                  alignment: Alignment.center,
-                                  child: Image.asset(
-                                    '/images/YellowBtn.png',
-                                    height: 200,
-                                    fit: BoxFit.cover,
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    child: Image.asset(
+                                      '/images/YellowBtn.png',
+                                      height: 300,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  alignment: Alignment.center,
-                                  child: Text(
+                                  Text(
                                     S.of(context).playandlearn,
                                     style: TextStyle(
                                       color: Colors.white,
@@ -98,23 +213,12 @@ class ThirdScreen extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ],
                       ),
-                      // SizedBox(
-                      //   height: 300,
-                      //   width: 300,
-                      //   child: Center(
-                      //     child: SvgPicture.asset(
-                      //       "images/svg/Play.svg",
-                      //       fit: BoxFit.contain,
-                      //       alignment: Alignment.center,
-                      //     ),
-                      //   ),
-                      // ),
                       SizedBox(
                         height: 300,
                         width: 300,

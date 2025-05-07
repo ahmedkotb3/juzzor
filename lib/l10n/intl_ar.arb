@@ -1,1 +1,10 @@
-{"@@locale": "ar","appTitle":"تطبيقي","welcomeMessage":"مرحبًا بك في تطبيقي!","errorOccurred":"حدث خطأ. يرجى المحاولة مرة أخرى لاحقًا.","loading":"جارٍ التحميل...","videos":"فيديوهات","playandlearn":"العب وتعلم"}
+{"@@locale": "ar",
+"appTitle":"تطبيقي",
+"welcomeMessage":"مرحبًا بك في تطبيقي!",
+"errorOccurred":"حدث خطأ. يرجى المحاولة مرة أخرى لاحقًا.",
+"loading":"جارٍ التحميل...",
+"videos":"فيديوهات",
+"playandlearn":"العب وتعلم",
+"Lang":"اللغة",
+"myAccount":"حسابي"
+}

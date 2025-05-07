@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:juzzor/generated/l10n.dart';
 import 'package:juzzor/screens/lang.dart';
-import 'package:juzzor/screens/splash.dart';
-import 'package:juzzor/screens/third.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
@@ -25,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -40,7 +39,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Sultan',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const ThirdScreen(),
+      home: const Lang(),
     );
   }
 }

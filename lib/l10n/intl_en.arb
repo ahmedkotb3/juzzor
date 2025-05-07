@@ -5,5 +5,7 @@
     "errorOccurred": "An error occurred. Please try again later.",
     "loading": "Loading...",
     "videos": "Videos",
-    "playandlearn": "Play and Learn"
+    "playandlearn": "Play and Learn",
+    "Lang": "Language",
+    "myAccount": "My Account"
 }
