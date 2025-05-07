@@ -9,7 +9,7 @@ class Adaptive {
 
   static double getFontSize(BuildContext context, double baseFontSize) {
     double screenWidth = MediaQuery.of(context).size.width;
-    const double baseScreenWidth = 500.0; // Standard screen width
+    const double baseScreenWidth = 700.0; // Standard screen width
     double scaleFactor = screenWidth / baseScreenWidth;
     return baseFontSize * scaleFactor;
   }

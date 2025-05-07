@@ -28,39 +28,34 @@ class _ThirdScreenState extends State<ThirdScreen> {
                 fit: BoxFit.contain,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   GestureDetector(
                     onTap: () {},
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
-                        Container(
-                          alignment: Alignment.center,
-                          child: Image.asset(
-                            '/images/YellowBtn.png',
-                            height: 300,
-                            fit: BoxFit.cover,
-                          ),
+                        Image.asset(
+                          '/images/YellowBtn.png',
+                          height: 300,
+                          fit: BoxFit.cover,
                         ),
                         Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              alignment: Alignment.center,
-                              child: Image.asset(
-                                '/images/langIcon.png',
-                                height: 70,
-                                fit: BoxFit.cover,
-                              ),
+                            Image.asset(
+                              '/images/langIcon.png',
+                              height: 70,
+                              fit: BoxFit.cover,
                             ),
-                            Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                'اللغة',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: Adaptive.getFontSize(context, 16),
-                                ),
+
+                            Text(
+                              'اللغة',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: Adaptive.getFontSize(context, 16),
                               ),
                             ),
                           ],
@@ -69,7 +64,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () => (),
+                    onTap: () => {},
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
@@ -98,16 +93,19 @@ class _ThirdScreenState extends State<ThirdScreen> {
                 ],
               ),
               Positioned(
-                bottom: 150,
-                left: 250,
-                child: SizedBox(
-                  height: 150,
-                  width: 150,
-                  child: Center(
-                    child: Image.asset(
-                      "images/BottomLogo.png",
-                      fit: BoxFit.contain,
-                      alignment: Alignment.center,
+                bottom: 50,
+                left: 50,
+                child: GestureDetector(
+                  onTap: () => Navigator.of(context).pop(false),
+                  child: SizedBox(
+                    height: 150,
+                    width: 150,
+                    child: Center(
+                      child: Image.asset(
+                        "images/backModal.png",
+                        fit: BoxFit.contain,
+                        alignment: Alignment.center,
+                      ),
                     ),
                   ),
                 ),
@@ -130,13 +128,14 @@ class _ThirdScreenState extends State<ThirdScreen> {
                 'images/svg/SecondBg.svg',
                 width: MediaQuery.sizeOf(context).width,
                 height: MediaQuery.sizeOf(context).height,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisSize: MainAxisSize.max,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -179,31 +178,78 @@ class _ThirdScreenState extends State<ThirdScreen> {
                       Stack(
                         alignment: Alignment.center,
                         children: [
-                          Container(
-                            alignment: Alignment.center,
-                            child: SvgPicture.asset(
-                              '/images/svg/GirlwPencil.svg',
-                              height: 500,
-                              fit: BoxFit.cover,
-                            ),
+                          SvgPicture.asset(
+                            '/images/svg/GirlwPencil.svg',
+                            height: MediaQuery.of(context).size.height * 0.5,
+                            fit: BoxFit.cover,
                           ),
                           Positioned(
-                            top: 200,
+                            bottom: -300,
                             child: Container(
                               alignment: Alignment.center,
                               child: Stack(
                                 alignment: Alignment.center,
                                 children: [
-                                  Container(
-                                    alignment: Alignment.center,
-                                    child: Image.asset(
-                                      '/images/YellowBtn.png',
-                                      height: 300,
-                                      fit: BoxFit.cover,
+                                  Image.asset(
+                                    '/images/YellowBtn.png',
+                                    width: 200,
+                                    height:
+                                        MediaQuery.of(context).size.height *
+                                        0.99,
+                                    fit: BoxFit.contain,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      S.of(context).playandlearn,
+                                      softWrap: true,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: Adaptive.getFontSize(
+                                          context,
+                                          16,
+                                        ),
+                                      ),
                                     ),
                                   ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            alignment: Alignment.center,
+                            child: SvgPicture.asset(
+                              '/images/svg/videosGirl.svg',
+                              height: MediaQuery.of(context).size.height * 0.5,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          Positioned(
+                            bottom: -70,
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Image.asset(
+                                    '/images/redBtn.png',
+                                    height:
+                                        MediaQuery.of(context).size.height *
+                                        0.28,
+                                    width:
+                                        MediaQuery.of(context).size.width *
+                                        0.22,
+                                    fit: BoxFit.contain,
+                                  ),
                                   Text(
-                                    S.of(context).playandlearn,
+                                    S.of(context).videos,
+                                    softWrap: true,
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -218,17 +264,6 @@ class _ThirdScreenState extends State<ThirdScreen> {
                             ),
                           ),
                         ],
-                      ),
-                      SizedBox(
-                        height: 300,
-                        width: 300,
-                        child: Center(
-                          child: SvgPicture.asset(
-                            "images/svg/videos.svg",
-                            fit: BoxFit.contain,
-                            alignment: Alignment.center,
-                          ),
-                        ),
                       ),
                     ],
                   ),

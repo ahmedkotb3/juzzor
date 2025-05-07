@@ -81,7 +81,7 @@ flutter_native_splash:
   # The android, ios and web parameters can be used to disable generating a splash scr/een on a given
   # platform.
   ios: true
-  web: true
+  web: false
 
   # Platform specific images can be specified with the following parameters, which will override
   # the respective parameter.  You may specify all, selected, or none of these parameters:

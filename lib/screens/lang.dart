@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 
 class Lang extends StatelessWidget {
   const Lang({super.key});
-  void ToThirdScreen(BuildContext context) {
+  void toThirdScreen(BuildContext context) {
     Navigator.of(
       context,
     ).push(MaterialPageRoute(builder: (context) => const ThirdScreen()));
@@ -18,7 +18,15 @@ class Lang extends StatelessWidget {
       body: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Column(children: [Image.asset("/images/langLeft.png")]),
+          Column(
+            children: [
+              Image.asset(
+                "/images/langLeft.png",
+                height: MediaQuery.of(context).size.height,
+                fit: BoxFit.cover,
+              ),
+            ],
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -27,7 +35,7 @@ class Lang extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       // Navigate to the second screen
-                      ToThirdScreen(context);
+                      toThirdScreen(context);
                       // and load the Arabic locale
                       S.load(Locale('ar'));
                     },
@@ -63,7 +71,7 @@ class Lang extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       // Navigate to the second screen
-                      ToThirdScreen(context);
+                      toThirdScreen(context);
                       // and load the Arabic locale
                       S.load(Locale('en'));
                     },
