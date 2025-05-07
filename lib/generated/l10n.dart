@@ -99,6 +99,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Language`
+  String get Lang {
+    return Intl.message('Language', name: 'Lang', desc: '', args: []);
+  }
+
+  /// `My Account`
+  String get myAccount {
+    return Intl.message('My Account', name: 'myAccount', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

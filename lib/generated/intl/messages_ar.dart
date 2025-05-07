@@ -22,11 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Lang": MessageLookupByLibrary.simpleMessage("اللغة"),
     "appTitle": MessageLookupByLibrary.simpleMessage("تطبيقي"),
     "errorOccurred": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ. يرجى المحاولة مرة أخرى لاحقًا.",
     ),
     "loading": MessageLookupByLibrary.simpleMessage("جارٍ التحميل..."),
+    "myAccount": MessageLookupByLibrary.simpleMessage("حسابي"),
     "playandlearn": MessageLookupByLibrary.simpleMessage("العب وتعلم"),
     "videos": MessageLookupByLibrary.simpleMessage("فيديوهات"),
     "welcomeMessage": MessageLookupByLibrary.simpleMessage(
