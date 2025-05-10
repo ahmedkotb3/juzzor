@@ -17,100 +17,104 @@ class _ThirdScreenState extends State<ThirdScreen> {
       context: context,
       barrierDismissible: true, // user must tap button!
       builder: (BuildContext context) {
-        return SizedBox(
-          width: double.infinity,
-          child: Stack(
-            children: <Widget>[
-              Image.asset(
-                '/images/modalBg.png',
-                height: 800,
-                width: double.infinity,
-                fit: BoxFit.contain,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () {},
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Image.asset(
-                          '/images/YellowBtn.png',
-                          height: 300,
-                          fit: BoxFit.cover,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              '/images/langIcon.png',
-                              height: 70,
+        return Dialog(
+          shadowColor: Colors.transparent,
+          backgroundColor: Colors.transparent,
+          child: SizedBox(
+            width: double.infinity,
+            child: Stack(
+              children: <Widget>[
+                Image.asset(
+                  '/images/modalBg.png',
+                  height: 800,
+                  width: double.infinity,
+                  fit: BoxFit.contain,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {},
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Image.asset(
+                            '/images/LangBtn.png',
+                            height: 300,
+                            fit: BoxFit.cover,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                '/images/langIcon.png',
+                                height: 70,
+                                fit: BoxFit.cover,
+                              ),
+
+                              Text(
+                                S.of(context).Lang,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: Adaptive.getFontSize(context, 16),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () => {},
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            alignment: Alignment.center,
+                            child: Image.asset(
+                              '/images/AccountBtn.png',
+                              height: 300,
                               fit: BoxFit.cover,
                             ),
-
-                            Text(
-                              'اللغة',
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              S.of(context).myAccount,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: Adaptive.getFontSize(context, 16),
                               ),
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () => {},
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Container(
-                          alignment: Alignment.center,
-                          child: Image.asset(
-                            '/images/YellowBtn.png',
-                            height: 300,
-                            fit: BoxFit.cover,
                           ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          child: Text(
-                            'حسابي',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: Adaptive.getFontSize(context, 16),
-                            ),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              Positioned(
-                bottom: 50,
-                left: 50,
-                child: GestureDetector(
-                  onTap: () => Navigator.of(context).pop(false),
-                  child: SizedBox(
-                    height: 150,
-                    width: 150,
-                    child: Center(
-                      child: Image.asset(
-                        "images/backModal.png",
-                        fit: BoxFit.contain,
-                        alignment: Alignment.center,
+                  ],
+                ),
+                Positioned(
+                  bottom: 50,
+                  left: 50,
+                  child: GestureDetector(
+                    onTap: () => Navigator.of(context).pop(false),
+                    child: SizedBox(
+                      height: 150,
+                      width: 150,
+                      child: Center(
+                        child: Image.asset(
+                          "images/backModal.png",
+                          fit: BoxFit.contain,
+                          alignment: Alignment.center,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
@@ -181,34 +185,51 @@ class _ThirdScreenState extends State<ThirdScreen> {
                           SvgPicture.asset(
                             '/images/svg/GirlwPencil.svg',
                             height: MediaQuery.of(context).size.height * 0.5,
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fitHeight,
                           ),
                           Positioned(
-                            bottom: -300,
+                            bottom: -50,
                             child: Container(
                               alignment: Alignment.center,
                               child: Stack(
+                                fit: StackFit.loose,
                                 alignment: Alignment.center,
                                 children: [
                                   Image.asset(
                                     '/images/YellowBtn.png',
-                                    width: 200,
+                                    width: 350,
                                     height:
                                         MediaQuery.of(context).size.height *
-                                        0.99,
+                                        0.25,
                                     fit: BoxFit.contain,
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      S.of(context).playandlearn,
-                                      softWrap: true,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: Adaptive.getFontSize(
-                                          context,
-                                          16,
+
+                                  SizedBox(
+                                    width: 250,
+                                    child: Expanded(
+                                      child: FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              S.of(context).playandlearn,
+                                              softWrap: true,
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: Adaptive.getFontSize(
+                                                  context,
+                                                  16,
+                                                ),
+                                              ),
+                                            ),
+                                            Image.asset(
+                                              '/images/lock.png',
+                                              height: 50,
+                                              width: 50,
+                                              fit: BoxFit.contain,
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
@@ -231,7 +252,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
                             ),
                           ),
                           Positioned(
-                            bottom: -70,
+                            bottom: -30,
                             child: Container(
                               alignment: Alignment.center,
                               child: Stack(
@@ -241,10 +262,10 @@ class _ThirdScreenState extends State<ThirdScreen> {
                                     '/images/redBtn.png',
                                     height:
                                         MediaQuery.of(context).size.height *
-                                        0.28,
+                                        0.24,
                                     width:
                                         MediaQuery.of(context).size.width *
-                                        0.22,
+                                        0.24,
                                     fit: BoxFit.contain,
                                   ),
                                   Text(
