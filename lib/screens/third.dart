@@ -17,100 +17,123 @@ class _ThirdScreenState extends State<ThirdScreen> {
       context: context,
       barrierDismissible: true, // user must tap button!
       builder: (BuildContext context) {
-        return SizedBox(
-          width: double.infinity,
-          child: Stack(
-            children: <Widget>[
-              Image.asset(
-                '/images/modalBg.png',
-                height: 800,
-                width: double.infinity,
-                fit: BoxFit.contain,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () {},
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Image.asset(
-                          '/images/YellowBtn.png',
-                          height: 300,
-                          fit: BoxFit.cover,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              '/images/langIcon.png',
-                              height: 70,
-                              fit: BoxFit.cover,
-                            ),
-
-                            Text(
-                              'اللغة',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: Adaptive.getFontSize(context, 16),
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            width: double.infinity,
+            child: Stack(
+              alignment: Alignment.center,
+              fit: StackFit.expand,
+              children: <Widget>[
+                Image.asset(
+                  '/images/modalBg.png',
+                  height: 800,
+                  width: double.infinity,
+                  fit: BoxFit.contain,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(90.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Image.asset(
+                                '/images/LangBtn.png',
+                                height: 300,
+                                fit: BoxFit.cover,
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () => {},
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Container(
-                          alignment: Alignment.center,
-                          child: Image.asset(
-                            '/images/YellowBtn.png',
-                            height: 300,
-                            fit: BoxFit.cover,
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    '/images/langIcon.png',
+                                    height: 70,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  Text(
+                                    S.of(context).Lang,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: Adaptive.getFontSize(
+                                        context,
+                                        16,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
-                        Container(
-                          alignment: Alignment.center,
-                          child: Text(
-                            'حسابي',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: Adaptive.getFontSize(context, 16),
-                            ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Image.asset(
+                                '/images/AccountBtn.png',
+                                height: 300,
+                                fit: BoxFit.cover,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    S.of(context).myAccount,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: Adaptive.getFontSize(
+                                        context,
+                                        16,
+                                      ),
+                                    ),
+                                  ),
+                                  Image.asset(
+                                    '/images/AccountIcon.png',
+                                    height: 40,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              Positioned(
-                bottom: 50,
-                left: 50,
-                child: GestureDetector(
-                  onTap: () => Navigator.of(context).pop(false),
-                  child: SizedBox(
-                    height: 150,
-                    width: 150,
-                    child: Center(
-                      child: Image.asset(
-                        "images/backModal.png",
-                        fit: BoxFit.contain,
-                        alignment: Alignment.center,
+                ),
+                Positioned(
+                  bottom: 50,
+                  left: 50,
+                  child: GestureDetector(
+                    onTap: () => Navigator.of(context).pop(false),
+                    child: SizedBox(
+                      height: 150,
+                      width: 150,
+                      child: Center(
+                        child: Image.asset(
+                          "images/backModal.png",
+                          fit: BoxFit.contain,
+                          alignment: Alignment.center,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
@@ -173,94 +196,86 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    mainAxisSize: MainAxisSize.max,
+
                     children: [
                       Stack(
-                        alignment: Alignment.center,
+                        // mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SvgPicture.asset(
                             '/images/svg/GirlwPencil.svg',
-                            height: MediaQuery.of(context).size.height * 0.5,
-                            fit: BoxFit.cover,
+                            height: MediaQuery.of(context).size.height * 0.4,
+                            fit: BoxFit.fitHeight,
                           ),
                           Positioned(
-                            bottom: -300,
-                            child: Container(
+                            bottom: -20,
+                            child: Stack(
                               alignment: Alignment.center,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Image.asset(
-                                    '/images/YellowBtn.png',
-                                    width: 200,
-                                    height:
-                                        MediaQuery.of(context).size.height *
-                                        0.99,
-                                    fit: BoxFit.contain,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      S.of(context).playandlearn,
-                                      softWrap: true,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: Adaptive.getFontSize(
-                                          context,
-                                          16,
+                              children: [
+                                Image.asset(
+                                  '/images/YellowBtn.png',
+                                  fit: BoxFit.fitWidth,
+                                  width: 400,
+                                  height: 200,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        S.of(context).playandlearn,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: Adaptive.getFontSize(
+                                            context,
+                                            16,
+                                          ),
                                         ),
                                       ),
-                                    ),
+                                      Image.asset(
+                                        '/images/lock.png',
+                                        height: 70,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
                       ),
                       Stack(
-                        alignment: Alignment.center,
                         children: [
-                          Container(
-                            alignment: Alignment.center,
-                            child: SvgPicture.asset(
-                              '/images/svg/videosGirl.svg',
-                              height: MediaQuery.of(context).size.height * 0.5,
-                              fit: BoxFit.contain,
-                            ),
+                          SvgPicture.asset(
+                            '/images/svg/videosGirl.svg',
+                            height: MediaQuery.of(context).size.height * 0.4,
+                            fit: BoxFit.fitHeight,
                           ),
                           Positioned(
-                            bottom: -70,
-                            child: Container(
+                            bottom: -100,
+                            child: Stack(
                               alignment: Alignment.center,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Image.asset(
-                                    '/images/redBtn.png',
-                                    height:
-                                        MediaQuery.of(context).size.height *
-                                        0.28,
-                                    width:
-                                        MediaQuery.of(context).size.width *
-                                        0.22,
-                                    fit: BoxFit.contain,
+                              children: [
+                                Image.asset(
+                                  '/images/redBtn.png',
+                                  height:
+                                      MediaQuery.of(context).size.width * 0.3,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.1,
+                                  fit: BoxFit.fill,
+                                ),
+                                Text(
+                                  S.of(context).videos,
+                                  softWrap: true,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: Adaptive.getFontSize(context, 16),
                                   ),
-                                  Text(
-                                    S.of(context).videos,
-                                    softWrap: true,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: Adaptive.getFontSize(
-                                        context,
-                                        16,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
