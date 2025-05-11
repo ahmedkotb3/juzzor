@@ -19,16 +19,19 @@ class Lang extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
+            mainAxisSize: MainAxisSize.max,
             children: [
               Image.asset(
                 "/images/langLeft.png",
                 height: MediaQuery.of(context).size.height,
-                fit: BoxFit.cover,
+                width: MediaQuery.of(context).size.width / 2,
+                fit: BoxFit.fill,
               ),
             ],
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
             children: [
               Row(
                 children: [
@@ -46,8 +49,8 @@ class Lang extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Image.asset(
                             '/images/YellowBtn.png',
-                            height: 300,
-                            fit: BoxFit.cover,
+                            height: MediaQuery.of(context).size.height / 3,
+                            fit: BoxFit.contain,
                           ),
                         ),
                         Container(
@@ -82,7 +85,7 @@ class Lang extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Image.asset(
                             '/images/EnBg.png',
-                            height: 300,
+                            height: MediaQuery.of(context).size.height / 3,
                             fit: BoxFit.contain,
                           ),
                         ),
