@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:juzzor/common.dart';
 import 'package:juzzor/generated/l10n.dart';
+import 'package:juzzor/screens/videos.dart';
 
 class ThirdScreen extends StatefulWidget {
   const ThirdScreen({super.key});
@@ -15,7 +16,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
     useSafeArea: true,
     context: context,
     barrierDismissible: true, // user must tap button!
-    builder: (BuildContext context) => newMethod(context),
+    builder: (BuildContext context) => smallModal(context),
   );
 
   @override
@@ -85,12 +86,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
                             fit: BoxFit.fitHeight,
                           ),
                           Positioned(
-                            bottom: 0,
+                            bottom: -80,
                             child: Container(
                               constraints: const BoxConstraints(maxWidth: 150),
                               alignment: Alignment.center,
                               padding: const EdgeInsets.all(8.0),
-                              width: 200,
                               height: 250,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
@@ -98,30 +98,31 @@ class _ThirdScreenState extends State<ThirdScreen> {
                                   fit: BoxFit.contain,
                                 ),
                               ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Flexible(
-                                    child: Text(
-                                      S.of(context).playandlearn,
-                                      softWrap: true,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: Adaptive.getFontSize(
-                                          context,
-                                          16,
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Flexible(
+                                      child: Text(
+                                        S.of(context).playandlearn,
+                                        softWrap: true,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 24,
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Image.asset(
-                                    '/images/lock.png',
-                                    height: 50,
-                                    width: 50,
-                                    fit: BoxFit.contain,
-                                  ),
-                                ],
+                                    Image.asset(
+                                      '/images/lock.png',
+                                      height: 30,
+                                      width: 30,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -142,32 +143,41 @@ class _ThirdScreenState extends State<ThirdScreen> {
                             bottom: -30,
                             child: Container(
                               alignment: Alignment.center,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Image.asset(
-                                    '/images/redBtn.png',
-                                    height:
-                                        MediaQuery.of(context).size.height *
-                                        0.24,
-                                    width:
-                                        MediaQuery.of(context).size.width *
-                                        0.24,
-                                    fit: BoxFit.contain,
-                                  ),
-                                  Text(
-                                    S.of(context).videos,
-                                    softWrap: true,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: Adaptive.getFontSize(
-                                        context,
-                                        16,
+                              child: GestureDetector(
+                                onTap:
+                                    () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Videos(),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    Image.asset(
+                                      '/images/redBtn.png',
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                          0.24,
+                                      width:
+                                          MediaQuery.of(context).size.width *
+                                          0.24,
+                                      fit: BoxFit.contain,
+                                    ),
+                                    Text(
+                                      S.of(context).videos,
+                                      softWrap: true,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: Adaptive.getFontSize(
+                                          context,
+                                          16,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

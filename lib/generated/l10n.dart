@@ -109,6 +109,41 @@ class S {
   String get myAccount {
     return Intl.message('My Account', name: 'myAccount', desc: '', args: []);
   }
+
+  /// `Login`
+  String get login {
+    return Intl.message('Login', name: 'login', desc: '', args: []);
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message('Logout', name: 'logout', desc: '', args: []);
+  }
+
+  /// `Numbers`
+  String get numbers {
+    return Intl.message('Numbers', name: 'numbers', desc: '', args: []);
+  }
+
+  /// `Letters`
+  String get letters {
+    return Intl.message('Letters', name: 'letters', desc: '', args: []);
+  }
+
+  /// `Colors`
+  String get colors {
+    return Intl.message('Colors', name: 'colors', desc: '', args: []);
+  }
+
+  /// `Shapes`
+  String get shapes {
+    return Intl.message('Shapes', name: 'shapes', desc: '', args: []);
+  }
+
+  /// `Miscellaneous`
+  String get others {
+    return Intl.message('Miscellaneous', name: 'others', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

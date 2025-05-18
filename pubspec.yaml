@@ -66,6 +66,7 @@ flutter:
     - assets/images/
     - assets/images/AppLogo.png
     - assets/images/svg/Gro.svg
+    - assets/images/splashBg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

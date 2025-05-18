@@ -7,5 +7,12 @@
     "videos": "Videos",
     "playandlearn": "Play and Learn",
     "Lang": "Language",
-    "myAccount": "My Account"
+    "myAccount": "My Account",
+    "login": "Login",
+    "logout": "Logout",
+    "numbers": "Numbers",
+    "letters": "Letters",
+    "colors": "Colors",
+    "shapes": "Shapes",
+    "others": "Miscellaneous"
 }

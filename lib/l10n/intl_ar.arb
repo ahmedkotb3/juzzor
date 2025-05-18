@@ -6,5 +6,12 @@
 "videos":"فيديوهات",
 "playandlearn":"العب وتعلم",
 "Lang":"اللغة",
-"myAccount":"حسابي"
+"myAccount":"حسابي",
+"login":"تسجيل الدخول",
+"logout":"خروج",
+"numbers":"الأرقام",
+"letters":"الحروف",
+"colors":"الألوان",
+"shapes":"الأشكال",
+"others":"منوعات"
 }

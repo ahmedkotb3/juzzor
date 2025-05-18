@@ -24,12 +24,19 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Lang": MessageLookupByLibrary.simpleMessage("Language"),
     "appTitle": MessageLookupByLibrary.simpleMessage("My Application"),
+    "colors": MessageLookupByLibrary.simpleMessage("Colors"),
     "errorOccurred": MessageLookupByLibrary.simpleMessage(
       "An error occurred. Please try again later.",
     ),
+    "letters": MessageLookupByLibrary.simpleMessage("Letters"),
     "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
+    "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "myAccount": MessageLookupByLibrary.simpleMessage("My Account"),
+    "numbers": MessageLookupByLibrary.simpleMessage("Numbers"),
+    "others": MessageLookupByLibrary.simpleMessage("Miscellaneous"),
     "playandlearn": MessageLookupByLibrary.simpleMessage("Play and Learn"),
+    "shapes": MessageLookupByLibrary.simpleMessage("Shapes"),
     "videos": MessageLookupByLibrary.simpleMessage("Videos"),
     "welcomeMessage": MessageLookupByLibrary.simpleMessage(
       "Welcome to My Application!",
