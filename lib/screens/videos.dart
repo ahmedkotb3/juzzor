@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:juzzor/common.dart';
 import 'package:juzzor/generated/l10n.dart';
+import 'package:juzzor/screens/internalvideos.dart';
 
 class Videos extends StatefulWidget {
   const Videos({super.key});
@@ -127,49 +128,59 @@ class _Videos extends State<Videos> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       for (var i in _cat)
-                        Column(
-                          children: [
-                            Container(
-                              alignment: Alignment.center,
-                              child: SvgPicture.asset(
-                                i['imageUrl'],
-                                height:
-                                    MediaQuery.of(context).size.height * 0.32,
-                                fit: BoxFit.contain,
+                        GestureDetector(
+                          onTap:
+                              () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => VideosInternal(),
+                                ),
                               ),
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              child: Stack(
+
+                          child: Column(
+                            children: [
+                              Container(
                                 alignment: Alignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                    '/images/svg/videosBtn.svg',
-                                    height:
-                                        MediaQuery.of(context).size.height *
-                                        0.18,
-                                    fit: BoxFit.contain,
-                                    colorFilter: ColorFilter.mode(
-                                      i['color'],
-                                      BlendMode.srcATop,
-                                    ),
-                                  ),
-                                  Text(
-                                    _getLocalizedText(context, i['text']),
-                                    softWrap: true,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: Adaptive.getFontSize(
-                                        context,
-                                        16,
+                                child: SvgPicture.asset(
+                                  i['imageUrl'],
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.32,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              Container(
+                                alignment: Alignment.center,
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    SvgPicture.asset(
+                                      '/images/svg/videosBtn.svg',
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                          0.18,
+                                      fit: BoxFit.contain,
+                                      colorFilter: ColorFilter.mode(
+                                        i['color'],
+                                        BlendMode.srcATop,
                                       ),
                                     ),
-                                  ),
-                                ],
+                                    Text(
+                                      _getLocalizedText(context, i['text']),
+                                      softWrap: true,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: Adaptive.getFontSize(
+                                          context,
+                                          16,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                     ],
                   ),
