@@ -412,3 +412,48 @@ Dialog smallModal(BuildContext context) {
     ),
   );
 }
+
+String getLocalizedText(BuildContext context, String key) {
+  switch (key) {
+    case 'others':
+      return S.of(context).others;
+    case 'colors':
+      return S.of(context).colors;
+    case 'numbers':
+      return S.of(context).numbers;
+    case 'shapes':
+      return S.of(context).shapes;
+    case 'letters':
+      return S.of(context).letters;
+    default:
+      return key;
+  }
+}
+
+final List cat = [
+  {
+    'imageUrl': 'images/svg/otherPerson.svg',
+    'text': "others",
+    'color': const Color(0xFFE25697),
+  },
+  {
+    'imageUrl': '/images/svg/shapes.svg',
+    'text': "shapes",
+    'color': const Color(0xFF0052A0),
+  },
+  {
+    'imageUrl': '/images/svg/colors.svg',
+    'text': "colors",
+    'color': const Color(0xFF7D4891),
+  },
+  {
+    'imageUrl': '/images/svg/Alphapet.svg',
+    'text': "letters",
+    'color': const Color(0xFFDC0039),
+  },
+  {
+    'imageUrl': '/images/svg/noPerson.svg',
+    'text': "numbers",
+    'color': const Color(0xFFFFBF00),
+  },
+];

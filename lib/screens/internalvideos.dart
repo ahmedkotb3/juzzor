@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:juzzor/common.dart';
-import 'package:juzzor/generated/l10n.dart';
 // https://github.com/dartbucket/flutter_youtube_integration/blob/master/lib/player.dart
 
 class VideosInternal extends StatefulWidget {
@@ -13,33 +12,7 @@ class VideosInternal extends StatefulWidget {
 }
 
 class _VideosInternal extends State<VideosInternal> {
-  final List _cat = [
-    {
-      'imageUrl': 'images/svg/otherPerson.svg',
-      'text': "others",
-      'color': const Color(0xFFE25697),
-    },
-    {
-      'imageUrl': '/images/svg/shapes.svg',
-      'text': "shapes",
-      'color': const Color(0xFF0052A0),
-    },
-    {
-      'imageUrl': '/images/svg/colors.svg',
-      'text': "colors",
-      'color': const Color(0xFF7D4891),
-    },
-    {
-      'imageUrl': '/images/svg/Alphapet.svg',
-      'text': "letters",
-      'color': const Color(0xFFDC0039),
-    },
-    {
-      'imageUrl': '/images/svg/noPerson.svg',
-      'text': "numbers",
-      'color': const Color(0xFFFFBF00),
-    },
-  ];
+  final _cat = cat;
 
   @override
   void initState() {
@@ -52,23 +25,6 @@ class _VideosInternal extends State<VideosInternal> {
     barrierDismissible: true, // user must tap button!
     builder: (BuildContext context) => bigModal(context),
   );
-
-  String _getLocalizedText(BuildContext context, String key) {
-    switch (key) {
-      case 'others':
-        return S.of(context).others;
-      case 'colors':
-        return S.of(context).colors;
-      case 'numbers':
-        return S.of(context).numbers;
-      case 'shapes':
-        return S.of(context).shapes;
-      case 'letters':
-        return S.of(context).letters;
-      default:
-        return key;
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +95,7 @@ class _VideosInternal extends State<VideosInternal> {
                                       ),
                                     ),
                                     Text(
-                                      _getLocalizedText(context, i['text']),
+                                      getLocalizedText(context, i['text']),
                                       softWrap: true,
                                       style: TextStyle(
                                         color: Colors.white,
@@ -202,7 +158,7 @@ class _VideosInternal extends State<VideosInternal> {
                                 SvgPicture.asset(
                                   '/images/svg/videosBtn.svg',
                                   height:
-                                      MediaQuery.of(context).size.height * 0.18,
+                                      MediaQuery.of(context).size.height * 0.2,
                                   fit: BoxFit.contain,
                                   colorFilter: ColorFilter.mode(
                                     widget.category['color'],
@@ -211,7 +167,7 @@ class _VideosInternal extends State<VideosInternal> {
                                 ),
 
                                 Text(
-                                  _getLocalizedText(
+                                  getLocalizedText(
                                     context,
                                     widget.category['text'],
                                   ),
