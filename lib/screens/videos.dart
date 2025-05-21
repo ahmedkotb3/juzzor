@@ -133,7 +133,8 @@ class _Videos extends State<Videos> {
                               () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => VideosInternal(),
+                                  builder:
+                                      (context) => VideosInternal(category: i),
                                 ),
                               ),
 

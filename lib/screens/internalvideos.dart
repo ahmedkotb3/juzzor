@@ -5,7 +5,8 @@ import 'package:juzzor/generated/l10n.dart';
 // https://github.com/dartbucket/flutter_youtube_integration/blob/master/lib/player.dart
 
 class VideosInternal extends StatefulWidget {
-  const VideosInternal({super.key});
+  final dynamic category;
+  const VideosInternal({super.key, required this.category});
 
   @override
   State<VideosInternal> createState() => _VideosInternal();
@@ -112,30 +113,46 @@ class _VideosInternal extends State<VideosInternal> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           for (var i in _cat)
-                            Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                SvgPicture.asset(
-                                  '/images/svg/videosBtn.svg',
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.18,
-                                  fit: BoxFit.contain,
-                                  colorFilter: ColorFilter.mode(
-                                    i['color'],
-                                    BlendMode.srcATop,
-                                  ),
+                            if (i['text'] != widget.category['text'])
+                              GestureDetector(
+                                onTap:
+                                    () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) =>
+                                                VideosInternal(category: i),
+                                      ),
+                                    ),
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    SvgPicture.asset(
+                                      '/images/svg/videosBtn.svg',
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                          0.18,
+                                      fit: BoxFit.contain,
+                                      colorFilter: ColorFilter.mode(
+                                        i['color'],
+                                        BlendMode.srcATop,
+                                      ),
+                                    ),
+                                    Text(
+                                      _getLocalizedText(context, i['text']),
+                                      softWrap: true,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: Adaptive.getFontSize(
+                                          context,
+                                          14,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                  _getLocalizedText(context, i['text']),
-                                  softWrap: true,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: Adaptive.getFontSize(context, 14),
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
                         ],
                       ),
                       GestureDetector(
@@ -160,77 +177,51 @@ class _VideosInternal extends State<VideosInternal> {
                     children: [
                       Column(
                         children: [
-                          GridView.count(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 10,
-                            children: [
-                              for (var i in _cat)
-                                GestureDetector(
-                                  onTap:
-                                      () => Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder:
-                                              (context) => VideosInternal(),
-                                        ),
-                                      ),
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    child: SvgPicture.asset(
-                                      i['imageUrl'],
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                          0.32,
-                                      fit: BoxFit.contain,
-                                    ),
-                                  ),
-                                ),
-                            ],
-                          ),
+                          // GridView.count(
+                          //   crossAxisCount: 2,
+                          //   crossAxisSpacing: 10,
+                          //   children: [],
+                          // ),
                         ],
                       ),
                       Column(
                         children: [
-                          for (var i in _cat)
-                            Container(
-                              alignment: Alignment.center,
-                              child: SvgPicture.asset(
-                                i['imageUrl'],
-                                height:
-                                    MediaQuery.of(context).size.height * 0.32,
-                                fit: BoxFit.contain,
-                              ),
+                          Container(
+                            alignment: Alignment.center,
+                            child: SvgPicture.asset(
+                              widget.category['imageUrl'],
+                              height: MediaQuery.of(context).size.height * 0.32,
+                              fit: BoxFit.contain,
                             ),
+                          ),
                           Container(
                             alignment: Alignment.center,
                             child: Stack(
                               alignment: Alignment.center,
                               children: [
-                                for (var i in _cat)
-                                  SvgPicture.asset(
-                                    '/images/svg/videosBtn.svg',
-                                    height:
-                                        MediaQuery.of(context).size.height *
-                                        0.18,
-                                    fit: BoxFit.contain,
-                                    colorFilter: ColorFilter.mode(
-                                      i['color'],
-                                      BlendMode.srcATop,
-                                    ),
+                                SvgPicture.asset(
+                                  '/images/svg/videosBtn.svg',
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.18,
+                                  fit: BoxFit.contain,
+                                  colorFilter: ColorFilter.mode(
+                                    widget.category['color'],
+                                    BlendMode.srcATop,
                                   ),
-                                for (var i in _cat)
-                                  Text(
-                                    _getLocalizedText(context, i['text']),
-                                    softWrap: true,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: Adaptive.getFontSize(
-                                        context,
-                                        16,
-                                      ),
-                                    ),
+                                ),
+
+                                Text(
+                                  _getLocalizedText(
+                                    context,
+                                    widget.category['text'],
                                   ),
+                                  softWrap: true,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: Adaptive.getFontSize(context, 16),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
