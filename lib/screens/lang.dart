@@ -54,7 +54,7 @@ class Lang extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.center,
+                          alignment: Alignment.topCenter,
                           child: Text(
                             'عربي',
                             style: TextStyle(

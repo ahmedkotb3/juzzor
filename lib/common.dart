@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:juzzor/generated/l10n.dart';
+import 'package:juzzor/screens/lang.dart';
 
 class Adaptive {
   static Map<String, double> getscreenDimenstions(BuildContext context) {
@@ -10,7 +11,7 @@ class Adaptive {
 
   static double getFontSize(BuildContext context, double baseFontSize) {
     double screenWidth = MediaQuery.of(context).size.width;
-    const double baseScreenWidth = 700.0; // Standard screen width
+    const double baseScreenWidth = 750.0; // Standard screen width
     double scaleFactor = screenWidth / baseScreenWidth;
     return baseFontSize * scaleFactor;
   }
@@ -117,8 +118,8 @@ Dialog bigModal(BuildContext context) {
                       GestureDetector(
                         onTap: () {},
                         child: Container(
-                          width: 150,
-                          height: 150,
+                          width: 170,
+                          height: 170,
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage('/images/logoutBtn.png'),
@@ -128,27 +129,30 @@ Dialog bigModal(BuildContext context) {
                           child: Stack(
                             alignment: Alignment.center,
                             children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    '/images/HomeIcon.png',
-                                    height: 30,
-                                    fit: BoxFit.contain,
-                                  ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 30.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Image.asset(
+                                      '/images/HomeIcon.png',
+                                      height: 30,
+                                      fit: BoxFit.contain,
+                                    ),
 
-                                  Text(
-                                    S.of(context).logout,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: Adaptive.getFontSize(
-                                        context,
-                                        16,
+                                    Text(
+                                      S.of(context).logout,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: Adaptive.getFontSize(
+                                          context,
+                                          16,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ],
                           ),
@@ -211,27 +215,30 @@ Dialog bigModal(BuildContext context) {
                           child: Stack(
                             alignment: Alignment.center,
                             children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    '/images/langIcon.png',
-                                    height: 40,
-                                    fit: BoxFit.contain,
-                                  ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 30.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Image.asset(
+                                      '/images/langIcon.png',
+                                      height: 40,
+                                      fit: BoxFit.contain,
+                                    ),
 
-                                  Text(
-                                    S.of(context).Lang,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: Adaptive.getFontSize(
-                                        context,
-                                        16,
+                                    Text(
+                                      S.of(context).Lang,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: Adaptive.getFontSize(
+                                          context,
+                                          16,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ],
                           ),
@@ -294,24 +301,29 @@ Dialog smallModal(BuildContext context) {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(30.0),
-                        child: GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            width: 250,
-                            height: 250,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('/images/LangBtn.png'),
-                                fit: BoxFit.contain,
-                              ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Lang()),
+                          );
+                        },
+                        child: Container(
+                          width: 250,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('/images/LangBtn.png'),
+                              fit: BoxFit.contain,
                             ),
-                            child: Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                          ),
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 40.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Image.asset(
                                       '/images/langIcon.png',
@@ -331,11 +343,12 @@ Dialog smallModal(BuildContext context) {
                                     ),
                                   ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
+
                       Padding(
                         padding: const EdgeInsets.all(30.0),
                         child: GestureDetector(

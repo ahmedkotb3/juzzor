@@ -40,7 +40,7 @@ class _Videos extends State<Videos> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 8.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.max,
@@ -52,7 +52,7 @@ class _Videos extends State<Videos> {
                       GestureDetector(
                         onTap: () => Navigator.of(context).pop(false),
                         child: SizedBox(
-                          height: 150,
+                          height: 120,
                           width: 150,
                           child: Center(
                             child: Image.asset(
@@ -66,7 +66,7 @@ class _Videos extends State<Videos> {
                       GestureDetector(
                         onTap: () => _handleModal(),
                         child: SizedBox(
-                          height: 150,
+                          height: 120,
                           width: 150,
                           child: Center(
                             child: Image.asset(
@@ -101,7 +101,7 @@ class _Videos extends State<Videos> {
                                 child: SvgPicture.asset(
                                   i['imageUrl'],
                                   height:
-                                      MediaQuery.of(context).size.height * 0.32,
+                                      MediaQuery.of(context).size.height * 0.31,
                                   fit: BoxFit.contain,
                                 ),
                               ),
@@ -114,7 +114,7 @@ class _Videos extends State<Videos> {
                                       '/images/svg/videosBtn.svg',
                                       height:
                                           MediaQuery.of(context).size.height *
-                                          0.18,
+                                          0.20,
                                       fit: BoxFit.contain,
                                       colorFilter: ColorFilter.mode(
                                         i['color'],
@@ -147,13 +147,12 @@ class _Videos extends State<Videos> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       SizedBox(
-                        height: 150,
+                        height: 120,
                         width: 150,
                         child: Center(
                           child: Image.asset(
                             "images/BottomLogo.png",
                             fit: BoxFit.contain,
-                            alignment: Alignment.center,
                           ),
                         ),
                       ),
