@@ -27,7 +27,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
           children: <Widget>[
             Positioned.fill(
               child: SvgPicture.asset(
-                'images/svg/SecondBg.svg',
+                'assets/images/svg/SecondBg.svg',
                 width: MediaQuery.sizeOf(context).width,
                 height: MediaQuery.sizeOf(context).height,
                 fit: BoxFit.fill,
@@ -46,11 +46,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
                       GestureDetector(
                         onTap: () => Navigator.of(context).pop(false),
                         child: SizedBox(
-                          height: 150,
-                          width: 150,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.15,
                           child: Center(
                             child: Image.asset(
-                              "images/left.png",
+                              "assets/images/Left.png",
                               fit: BoxFit.contain,
                               alignment: Alignment.center,
                             ),
@@ -60,11 +60,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
                       GestureDetector(
                         onTap: () => _handleModal(),
                         child: SizedBox(
-                          height: 150,
-                          width: 150,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.15,
                           child: Center(
                             child: Image.asset(
-                              "images/rightBtn.png",
+                              "assets/images/rightBtn.png",
                               fit: BoxFit.contain,
                               alignment: Alignment.center,
                             ),
@@ -81,20 +81,22 @@ class _ThirdScreenState extends State<ThirdScreen> {
                         alignment: Alignment.center,
                         children: [
                           SvgPicture.asset(
-                            '/images/svg/GirlwPencil.svg',
+                            'assets/images/svg/GirlwPencil.svg',
                             height: MediaQuery.of(context).size.height * 0.5,
                             fit: BoxFit.fitHeight,
                           ),
                           Positioned(
-                            bottom: -80,
+                            bottom: -60,
                             child: Container(
-                              constraints: const BoxConstraints(maxWidth: 150),
+                              constraints: const BoxConstraints(maxWidth: 140),
                               alignment: Alignment.center,
                               padding: const EdgeInsets.all(8.0),
-                              height: 250,
+                              height: MediaQuery.of(context).size.height * 0.45,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image: AssetImage('/images/YellowBtn.png'),
+                                  image: AssetImage(
+                                    'assets/images/YellowBtn.png',
+                                  ),
                                   fit: BoxFit.contain,
                                 ),
                               ),
@@ -116,7 +118,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
                                       ),
                                     ),
                                     Image.asset(
-                                      '/images/lock.png',
+                                      'assets/images/lock.png',
                                       height: 30,
                                       width: 30,
                                       fit: BoxFit.contain,
@@ -134,13 +136,13 @@ class _ThirdScreenState extends State<ThirdScreen> {
                           Container(
                             alignment: Alignment.center,
                             child: SvgPicture.asset(
-                              '/images/svg/videosGirl.svg',
+                              'assets/images/svg/videosGirl.svg',
                               height: MediaQuery.of(context).size.height * 0.5,
                               fit: BoxFit.contain,
                             ),
                           ),
                           Positioned(
-                            bottom: -30,
+                            bottom: -20,
                             child: Container(
                               alignment: Alignment.center,
                               child: GestureDetector(
@@ -155,10 +157,10 @@ class _ThirdScreenState extends State<ThirdScreen> {
                                   alignment: Alignment.center,
                                   children: [
                                     Image.asset(
-                                      '/images/redBtn.png',
+                                      'assets/images/redBtn.png',
                                       height:
                                           MediaQuery.of(context).size.height *
-                                          0.24,
+                                          0.27,
                                       width:
                                           MediaQuery.of(context).size.width *
                                           0.24,
@@ -190,11 +192,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       SizedBox(
-                        height: 150,
-                        width: 150,
+                        height: MediaQuery.of(context).size.height * 0.20,
+                        width: MediaQuery.of(context).size.width * 0.20,
                         child: Center(
                           child: Image.asset(
-                            "images/BottomLogo.png",
+                            "assets/images/BottomLogo.png",
                             fit: BoxFit.contain,
                             alignment: Alignment.center,
                           ),

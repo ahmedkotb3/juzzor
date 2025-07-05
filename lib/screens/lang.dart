@@ -22,7 +22,7 @@ class Lang extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: [
               Image.asset(
-                "/images/langLeft.png",
+                "assets/images/langLeft.png",
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width / 2,
                 fit: BoxFit.fill,
@@ -48,7 +48,7 @@ class Lang extends StatelessWidget {
                         Container(
                           alignment: Alignment.center,
                           child: Image.asset(
-                            '/images/YellowBtn.png',
+                            'assets/images/YellowBtn.png',
                             height: MediaQuery.of(context).size.height / 3,
                             fit: BoxFit.contain,
                           ),
@@ -84,7 +84,7 @@ class Lang extends StatelessWidget {
                         Container(
                           alignment: Alignment.center,
                           child: Image.asset(
-                            '/images/EnBg.png',
+                            'assets/images/EnBg.png',
                             height: MediaQuery.of(context).size.height / 3,
                             fit: BoxFit.contain,
                           ),

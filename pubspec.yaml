@@ -67,6 +67,9 @@ flutter:
   assets:
     - assets/images/
     - assets/images/svg/
+    - assets//images/YellowBtn.png
+    - assets/images/langLeft.png
+    - assets/images/EnBg.png
     - assets/images/AppLogo.png
     - assets/images/svg/Gro.svg
     - assets/images/splashBg.png

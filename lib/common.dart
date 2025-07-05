@@ -24,11 +24,11 @@ Dialog bigModal(BuildContext context) {
     child: Stack(
       children: [
         Container(
-          height: Adaptive.getscreenDimenstions(context)['height']! * 0.9,
+          height: Adaptive.getscreenDimenstions(context)['height']! * 0.94,
           width: Adaptive.getscreenDimenstions(context)['width']! * 0.8,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('/images/modalBg.png'),
+              image: AssetImage('assets/images/modalBg.png'),
               fit: BoxFit.contain,
             ),
             borderRadius: BorderRadius.circular(20),
@@ -43,68 +43,86 @@ Dialog bigModal(BuildContext context) {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          width: 150,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('/images/YellowBtn.png'),
-                              fit: BoxFit.contain,
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            width: 170,
+                            height: 170,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  'assets/images/YellowBtn.png',
+                                ),
+                                fit: BoxFit.contain,
+                              ),
                             ),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Flexible(
-                                      child: Text(
-                                        S.of(context).playandlearn,
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: Adaptive.getFontSize(
-                                            context,
-                                            16,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                right: 18.0,
+                                left: 18.0,
+                              ),
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Flexible(
+                                          child: Text(
+                                            S.of(context).playandlearn,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: Adaptive.getFontSize(
+                                                context,
+                                                16,
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                      ),
+                                        Image.asset(
+                                          'assets/images/gameIcon.png',
+                                          height: 40,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ],
                                     ),
-                                    Image.asset(
-                                      '/images/gameIcon.png',
-                                      height: 40,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () => {},
-                        child: Container(
-                          width: 150,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('/images/redBtn.png'),
-                              fit: BoxFit.contain,
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                        child: GestureDetector(
+                          onTap: () => {},
+                          child: Container(
+                            width: 170,
+                            height: 170,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/redBtn.png'),
+                                fit: BoxFit.contain,
+                              ),
                             ),
-                          ),
-                          alignment: Alignment.center,
-                          child: Text(
-                            S.of(context).videos,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: Adaptive.getFontSize(context, 16),
+                            alignment: Alignment.center,
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                S.of(context).videos,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: Adaptive.getFontSize(context, 16),
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -115,119 +133,78 @@ Dialog bigModal(BuildContext context) {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          width: 170,
-                          height: 170,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('/images/logoutBtn.png'),
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 30.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Image.asset(
-                                      '/images/HomeIcon.png',
-                                      height: 30,
-                                      fit: BoxFit.contain,
-                                    ),
-
-                                    Text(
-                                      S.of(context).logout,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: Adaptive.getFontSize(
-                                          context,
-                                          16,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            width: 170,
+                            height: 170,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  'assets/images/logoutBtn.png',
                                 ),
+                                fit: BoxFit.contain,
                               ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => {},
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Container(
-                              height: 200,
-                              width: 200,
+                            ),
+                            child: Stack(
                               alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('/images/AccountBtn.png'),
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    S.of(context).myAccount,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: Adaptive.getFontSize(
-                                        context,
-                                        16,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 30.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/HomeIcon.png',
+                                        height: 30,
+                                        fit: BoxFit.contain,
                                       ),
-                                    ),
+
+                                      Text(
+                                        S.of(context).logout,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: Adaptive.getFontSize(
+                                            context,
+                                            16,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset(
-                                      '/images/AccountIcon.png',
-                                      height: 40,
-                                      fit: BoxFit.contain,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          width: 170,
-                          height: 170,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('/images/LangBtn.png'),
-                              fit: BoxFit.contain,
+                                ),
+                              ],
                             ),
                           ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                        child: GestureDetector(
+                          onTap: () => {},
                           child: Stack(
                             alignment: Alignment.center,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 30.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Image.asset(
-                                      '/images/langIcon.png',
-                                      height: 40,
-                                      fit: BoxFit.contain,
+                              Container(
+                                height: 180,
+                                width: 180,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      'assets/images/AccountBtn.png',
                                     ),
-
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
                                     Text(
-                                      S.of(context).Lang,
+                                      S.of(context).myAccount,
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold,
@@ -237,10 +214,64 @@ Dialog bigModal(BuildContext context) {
                                         ),
                                       ),
                                     ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image.asset(
+                                        'assets/images/AccountIcon.png',
+                                        height: 40,
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
                             ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            width: 170,
+                            height: 170,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/LangBtn.png'),
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 30.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/langIcon.png',
+                                        height: 40,
+                                        fit: BoxFit.contain,
+                                      ),
+
+                                      Text(
+                                        S.of(context).Lang,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: Adaptive.getFontSize(
+                                            context,
+                                            16,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -286,7 +317,7 @@ Dialog smallModal(BuildContext context) {
           width: Adaptive.getscreenDimenstions(context)['width']! * 0.8,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('/images/modalBg.png'),
+              image: AssetImage('assets/images/modalBg.png'),
               fit: BoxFit.contain,
             ),
             borderRadius: BorderRadius.circular(20),
@@ -297,9 +328,11 @@ Dialog smallModal(BuildContext context) {
             children: <Widget>[
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       GestureDetector(
                         onTap: () {
@@ -309,11 +342,12 @@ Dialog smallModal(BuildContext context) {
                           );
                         },
                         child: Container(
-                          width: 250,
-                          height: 200,
+                          height: MediaQuery.of(context).size.height * 0.4,
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          alignment: Alignment.center,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage('/images/LangBtn.png'),
+                              image: AssetImage('assets/images/LangBtn.png'),
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -326,7 +360,7 @@ Dialog smallModal(BuildContext context) {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Image.asset(
-                                      '/images/langIcon.png',
+                                      'assets/images/langIcon.png',
                                       height: 40,
                                       fit: BoxFit.contain,
                                     ),
@@ -357,12 +391,15 @@ Dialog smallModal(BuildContext context) {
                             alignment: Alignment.center,
                             children: [
                               Container(
-                                height: 200,
-                                width: 200,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.4,
+                                width: MediaQuery.of(context).size.width * 0.3,
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage('/images/AccountBtn.png'),
+                                    image: AssetImage(
+                                      'assets/images/AccountBtn.png',
+                                    ),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -383,7 +420,7 @@ Dialog smallModal(BuildContext context) {
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Image.asset(
-                                        '/images/AccountIcon.png',
+                                        'assets/images/AccountIcon.png',
                                         height: 40,
                                         fit: BoxFit.contain,
                                       ),
@@ -409,11 +446,11 @@ Dialog smallModal(BuildContext context) {
           child: GestureDetector(
             onTap: () => Navigator.of(context).pop(false),
             child: SizedBox(
-              height: 150,
-              width: 150,
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: MediaQuery.of(context).size.width * 0.15,
               child: Center(
                 child: Image.asset(
-                  "images/backModal.png",
+                  "assets/images/backModal.png",
                   fit: BoxFit.contain,
                   alignment: Alignment.bottomLeft,
                 ),
@@ -445,27 +482,27 @@ String getLocalizedText(BuildContext context, String key) {
 
 final List cat = [
   {
-    'imageUrl': 'images/svg/otherPerson.svg',
+    'imageUrl': 'assets/images/svg/otherPerson.svg',
     'text': "others",
     'color': const Color(0xFFE25697),
   },
   {
-    'imageUrl': '/images/svg/shapes.svg',
+    'imageUrl': 'assets/images/svg/shapes.svg',
     'text': "shapes",
     'color': const Color(0xFF0052A0),
   },
   {
-    'imageUrl': '/images/svg/colors.svg',
+    'imageUrl': 'assets/images/svg/colors.svg',
     'text': "colors",
     'color': const Color(0xFF7D4891),
   },
   {
-    'imageUrl': '/images/svg/Alphapet.svg',
+    'imageUrl': 'assets/images/svg/Alphapet.svg',
     'text': "letters",
     'color': const Color(0xFFDC0039),
   },
   {
-    'imageUrl': '/images/svg/noPerson.svg',
+    'imageUrl': 'assets/images/svg/noPerson.svg',
     'text': "numbers",
     'color': const Color(0xFFFFBF00),
   },

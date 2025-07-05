@@ -33,7 +33,7 @@ class _Videos extends State<Videos> {
           children: <Widget>[
             Positioned.fill(
               child: SvgPicture.asset(
-                'images/svg/videosBg.svg',
+                'assets/images/svg/videosBg.svg',
                 width: MediaQuery.sizeOf(context).width,
                 height: MediaQuery.sizeOf(context).height,
                 fit: BoxFit.fill,
@@ -52,11 +52,11 @@ class _Videos extends State<Videos> {
                       GestureDetector(
                         onTap: () => Navigator.of(context).pop(false),
                         child: SizedBox(
-                          height: 120,
-                          width: 150,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.15,
                           child: Center(
                             child: Image.asset(
-                              "images/left.png",
+                              "assets/images/Left.png",
                               fit: BoxFit.contain,
                               alignment: Alignment.center,
                             ),
@@ -66,11 +66,11 @@ class _Videos extends State<Videos> {
                       GestureDetector(
                         onTap: () => _handleModal(),
                         child: SizedBox(
-                          height: 120,
-                          width: 150,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.15,
                           child: Center(
                             child: Image.asset(
-                              "images/rightBtn.png",
+                              "assets/images/rightBtn.png",
                               fit: BoxFit.contain,
                               alignment: Alignment.center,
                             ),
@@ -111,7 +111,7 @@ class _Videos extends State<Videos> {
                                   alignment: Alignment.center,
                                   children: [
                                     SvgPicture.asset(
-                                      '/images/svg/videosBtn.svg',
+                                      'assets/images/svg/videosBtn.svg',
                                       height:
                                           MediaQuery.of(context).size.height *
                                           0.20,
@@ -147,11 +147,11 @@ class _Videos extends State<Videos> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       SizedBox(
-                        height: 120,
-                        width: 150,
+                        height: MediaQuery.of(context).size.height * 0.19,
+                        width: MediaQuery.of(context).size.width * 0.19,
                         child: Center(
                           child: Image.asset(
-                            "images/BottomLogo.png",
+                            "assets/images/BottomLogo.png",
                             fit: BoxFit.contain,
                           ),
                         ),

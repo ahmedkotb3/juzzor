@@ -34,7 +34,7 @@ class _VideosInternal extends State<VideosInternal> {
           children: <Widget>[
             Positioned.fill(
               child: SvgPicture.asset(
-                'images/svg/videoInternal.svg',
+                'assets/images/svg/videoInternal.svg',
                 width: MediaQuery.sizeOf(context).width,
                 height: MediaQuery.sizeOf(context).height,
                 fit: BoxFit.fill,
@@ -53,11 +53,11 @@ class _VideosInternal extends State<VideosInternal> {
                       GestureDetector(
                         onTap: () => Navigator.of(context).pop(false),
                         child: SizedBox(
-                          height: 120,
-                          width: 120,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.15,
                           child: Center(
                             child: Image.asset(
-                              "images/left.png",
+                              "assets/images/Left.png",
                               fit: BoxFit.contain,
                               alignment: Alignment.center,
                             ),
@@ -84,7 +84,7 @@ class _VideosInternal extends State<VideosInternal> {
                                   alignment: Alignment.center,
                                   children: [
                                     SvgPicture.asset(
-                                      '/images/svg/videosBtn.svg',
+                                      'assets/images/svg/videosBtn.svg',
                                       height:
                                           MediaQuery.of(context).size.height *
                                           0.18,
@@ -114,11 +114,11 @@ class _VideosInternal extends State<VideosInternal> {
                       GestureDetector(
                         onTap: () => _handleModal(),
                         child: SizedBox(
-                          height: 120,
-                          width: 120,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.15,
                           child: Center(
                             child: Image.asset(
-                              "images/rightBtn.png",
+                              "assets/images/rightBtn.png",
                               fit: BoxFit.contain,
                               alignment: Alignment.center,
                             ),
@@ -156,7 +156,7 @@ class _VideosInternal extends State<VideosInternal> {
                               alignment: Alignment.center,
                               children: [
                                 SvgPicture.asset(
-                                  '/images/svg/videosBtn.svg',
+                                  'assets/images/svg/videosBtn.svg',
                                   height:
                                       MediaQuery.of(context).size.height * 0.2,
                                   fit: BoxFit.contain,
@@ -191,11 +191,11 @@ class _VideosInternal extends State<VideosInternal> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       SizedBox(
-                        height: 150,
-                        width: 150,
+                        height: MediaQuery.of(context).size.height * 0.15,
+                        width: MediaQuery.of(context).size.width * 0.15,
                         child: Center(
                           child: Image.asset(
-                            "images/BottomLogo.png",
+                            "assets/images/BottomLogo.png",
                             fit: BoxFit.contain,
                             alignment: Alignment.center,
                           ),
