@@ -147,8 +147,8 @@ class _Videos extends State<Videos> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.19,
-                        width: MediaQuery.of(context).size.width * 0.19,
+                        height: MediaQuery.of(context).size.height * 0.15,
+                        width: MediaQuery.of(context).size.width * 0.18,
                         child: Center(
                           child: Image.asset(
                             "assets/images/BottomLogo.png",

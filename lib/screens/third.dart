@@ -192,8 +192,8 @@ class _ThirdScreenState extends State<ThirdScreen> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.20,
-                        width: MediaQuery.of(context).size.width * 0.20,
+                        height: MediaQuery.of(context).size.height * 0.14,
+                        width: MediaQuery.of(context).size.width * 0.15,
                         child: Center(
                           child: Image.asset(
                             "assets/images/BottomLogo.png",

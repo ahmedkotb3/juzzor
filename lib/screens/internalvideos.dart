@@ -191,7 +191,7 @@ class _VideosInternal extends State<VideosInternal> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.15,
+                        height: MediaQuery.of(context).size.height * 0.14,
                         width: MediaQuery.of(context).size.width * 0.15,
                         child: Center(
                           child: Image.asset(
